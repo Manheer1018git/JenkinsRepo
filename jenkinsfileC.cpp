@@ -13,20 +13,16 @@ pipeline{
             }
             post{
                 success{
-                    emailext(
-                        to: "manheer1018@gmail.com",
-                        subject: "Test result",
-                        body: "Tests are successful",
-                        attachLog: true
-                    )
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Test result",
+                    body: "Tests are successful",
+                    attachLog: true
                 }  
                 failure{
-                    emailext(
-                        to: "manheer1018@gmail.com",
-                        subject: "Test result",
-                        body: "Tests failed",
-                        attachLog: true
-                    )
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Test result",
+                    body: "Tests failed",
+                    attachLog: true
                 }             
             }
         }
@@ -41,21 +37,17 @@ pipeline{
             }
             post{
                 success{
-                    emailext(
-                        to: "manheer1018@gmail.com",
-                        subject: "Security Scan result",
-                        body: "Security scan is successful",
-                        attachLog: true
-                    )
-                }  
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Security Scan result",
+                    body: "Security Scan is successful",
+                    attachLog: true
+                } 
                 failure{
-                    emailext(
-                        to: "manheer1018@gmail.com",
-                        subject: "Security Scan result",
-                        body: "Security scan failed",
-                        attachLog: true
-                    )
-                }             
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Security Scan result",
+                    body: "Security Scan failed",
+                    attachLog: true
+                }              
             }
         }
         stage('Deploying to Staging'){
