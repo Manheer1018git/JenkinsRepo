@@ -15,12 +15,14 @@ pipeline{
                 success{
                     mail to: "manheer1018@gmail.com",
                     subject: "Test result",
-                    body: "Tests are successful"
+                    body: "Tests are successful",
+                    attachments: [[$class: 'Attachment', content: currentBuild.rawBuild.getLog(1000).join('\n'), filename: 'build.log']]
                 }  
                 failure{
                     mail to: "manheer1018@gmail.com",
                     subject: "Test result",
-                    body: "Tests failed"
+                    body: "Tests failed",
+                    attachments: [[$class: 'Attachment', content: currentBuild.rawBuild.getLog(1000).join('\n'), filename: 'build.log']]
                 }             
             }
         }
@@ -37,12 +39,14 @@ pipeline{
                 success{
                     mail to: "manheer1018@gmail.com",
                     subject: "Security Scan result",
-                    body: "Security Scan successful"
+                    body: "Security Scan successful",
+                    attachments: [[$class: 'Attachment', content: currentBuild.rawBuild.getLog(1000).join('\n'), filename: 'build.log']]
                 }  
                 failure{
                     mail to: "manheer1018@gmail.com",
                     subject: "Security Scan result",
-                    body: "Security Scan failed"
+                    body: "Security Scan failed",
+                    attachments: [[$class: 'Attachment', content: currentBuild.rawBuild.getLog(1000).join('\n'), filename: 'build.log']]
                 }              
             }
         }
