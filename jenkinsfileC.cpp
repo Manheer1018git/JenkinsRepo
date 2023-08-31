@@ -13,20 +13,14 @@ pipeline{
             }
             post{
                 success{
-                    emailext(
-                        subject: "Test result",
-                        body: "Tests are successful",
-                        to: 'manheer1018@gmail.com',
-                        attachLog: true
-                    )
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Test result",
+                    body: "Tests are successful"
                 }  
                 failure{
-                    emailext(
-                        subject: "Test result",
-                        body: "Tests failed",
-                        to: 'manheer1018@gmail.com',
-                        attachLog: true
-                    )
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Test result",
+                    body: "Tests failed"
                 }             
             }
         }
@@ -41,20 +35,14 @@ pipeline{
             }
             post{
                 success{
-                    emailext(                        
-                        subject: "Security Scan result",
-                        body: "Security scan is successful",
-                        to: 'manheer1018@gmail.com',
-                        attachLog: true
-                    )
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Security Scan result",
+                    body: "Security Scan successful"
                 }  
                 failure{
-                    emailext(
-                        subject: "Security Scan result",
-                        body: "Security scan failed",
-                        to: 'manheer1018@gmail.com',
-                        attachLog: true
-                    )
+                    mail to: "manheer1018@gmail.com",
+                    subject: "Security Scan result",
+                    body: "Security Scan failed"
                 }              
             }
         }
