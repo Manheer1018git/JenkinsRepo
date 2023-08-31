@@ -14,7 +14,7 @@ pipeline{
             post{
                 success{
                     emailext(
-                        mail to: "manheer1018@gmail.com",
+                        to: "manheer1018@gmail.com",
                         subject: "Test result",
                         body: "Tests are successful"
                         attachLog: true
@@ -22,7 +22,7 @@ pipeline{
                 }  
                 failure{
                     emailext(
-                        mail to: "manheer1018@gmail.com",
+                        to: "manheer1018@gmail.com",
                         subject: "Test result",
                         body: "Tests failed"
                         attachLog: true
@@ -42,7 +42,7 @@ pipeline{
             post{
                 success{
                     emailext(
-                        mail to: "manheer1018@gmail.com",
+                        to: "manheer1018@gmail.com",
                         subject: "Security Scan result",
                         body: "Security scan is successful"
                         attachLog: true
