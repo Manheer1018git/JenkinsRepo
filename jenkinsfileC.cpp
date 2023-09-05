@@ -13,22 +13,22 @@ pipeline{
             }
             post{
                 success{
-                    emailext{
+                    emailext(
                         from: "manheer1018@gmail.com",
                         subject: "Unit and Integration tests",
                         body: "Tests were successful",
                         attachLog: true,
                         to: "manheer1018@gmail.com"
-                    }             
+                    )      
                 }  
                 failure{
-                    emailext{
+                    emailext(
                         from: "manheer1018@gmail.com",
                         subject: "Unit and Integration tests",
                         body: "Tests failed",
                         attachLog: true,
                         to: "manheer1018@gmail.com"
-                    }
+                    )
                 }             
             }
         }
@@ -43,20 +43,20 @@ pipeline{
             }
             post{
                 success{
-                    emailext{
+                    emailext(
                         from: "manheer1018@gmail.com",
                         subject: "Security Scans",
                         body: "Security scans were successful",
                         to: "manheer1018@gmail.com"
-                    }
+                    )
                 }  
                 failure{
-                    emailext{
+                    emailext(
                         from: "manheer1018@gmail.com",
                         subject: "Security Scans",
                         body: "Security scans failed",
                         to: "manheer1018@gmail.com"
-                    }
+                    )
                 }              
             }
         }
