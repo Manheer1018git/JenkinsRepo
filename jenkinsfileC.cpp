@@ -13,14 +13,22 @@ pipeline{
             }
             post{
                 success{
-                    mail to: "manheer1018@gmail.com",
-                    subject: "Test result",
-                    body: "Tests are successful"             
+                    emailext{
+                        from: "manheer1018@gmail.com",
+                        subject: "Unit and Integration tests",
+                        body: "Tests were successful",
+                        attachLog: true,
+                        to: "manheer1018@gmail.com"
+                    }             
                 }  
                 failure{
-                    mail to: "manheer1018@gmail.com",
-                    subject: "Test result",
-                    body: "Tests failed"
+                    emailext{
+                        from: "manheer1018@gmail.com",
+                        subject: "Unit and Integration tests",
+                        body: "Tests failed",
+                        attachLog: true,
+                        to: "manheer1018@gmail.com"
+                    }
                 }             
             }
         }
@@ -35,14 +43,20 @@ pipeline{
             }
             post{
                 success{
-                    mail to: "manheer1018@gmail.com",
-                    subject: "Security Scan result",
-                    body: "Security Scan successful"
+                    emailext{
+                        from: "manheer1018@gmail.com",
+                        subject: "Security Scans",
+                        body: "Security scans were successful",
+                        to: "manheer1018@gmail.com"
+                    }
                 }  
                 failure{
-                    mail to: "manheer1018@gmail.com",
-                    subject: "Security Scan result",
-                    body: "Security Scan failed"
+                    emailext{
+                        from: "manheer1018@gmail.com",
+                        subject: "Security Scans",
+                        body: "Security scans failed",
+                        to: "manheer1018@gmail.com"
+                    }
                 }              
             }
         }
